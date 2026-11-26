@@ -1,0 +1,25 @@
+{
+  "name": "ai-engineering-lab",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=24 <25"
+  },
+  "scripts": {
+    "build": "node -e \"process.getBuiltinModule('node:fs').rmSync('dist', { recursive: true, force: true })\" && tsc",
+    "start": "node dist/src/main.js",
+    "test": "node --test \"test/**/*.test.ts\"",
+    "test:compiled": "npm run build && node --test \"dist/test/**/*.test.js\"",
+    "smoke": "npm start",
+    "lint": "eslint .",
+    "typecheck": "tsc --noEmit",
+    "verify": "npm run lint && npm run typecheck && npm test && npm run test:compiled && npm run smoke"
+  },
+  "devDependencies": {
+    "@types/node": "^24.19.2",
+    "eslint": "^10.15.0",
+    "typescript": "^6.0.3",
+    "typescript-eslint": "^8.74.0"
+  }
+}
