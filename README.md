@@ -18,6 +18,13 @@ npm start
 The application prints a greeting. `npm run build` removes and recreates `dist/`,
 which contains compiled application and test files.
 
+## Greeting API
+
+`greet(name)` preserves the default greeting (`Hello, Ada!`). Callers can
+request a casual greeting (`Hey, Ada!`) or a formal greeting
+(`Good day, Ada.`) with the `casual` or `formal` style. Names are used as
+provided; empty or whitespace-only names and unsupported styles are rejected.
+
 ## Checks
 
 Run all quality gates with:
